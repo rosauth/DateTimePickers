@@ -34,7 +34,12 @@ public class TimePickerFragment extends DialogFragment implements TimePickerDial
     }
 
     @Override
-    public void onTimeSet(TimePicker timePicker, int i, int i1) {
+    public void onTimeSet(TimePicker timePicker, int hourOfDay, int minute) {
+        //set the activity to the Main Activity
+        MainActivity activity = (MainActivity) getActivity();
+
+        //invoke Main Activity's processTimePickerResult() method
+        activity.processTimePickerResult(hourOfDay, minute);
 
     }
 }
